@@ -104,4 +104,8 @@ Route::get('/', function(){
     return 'Home';
 });
 
+Route::get('/redirect/{service}','SocialController@redirect');
+Route::get('/callback/{service}','SocialController@callback');
+
+
 

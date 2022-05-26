@@ -76,10 +76,15 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-3 offset-md-2  ">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                            <div class="col-md-5 offset-md-2">
+                                <a href={{ url('redirect/facebook') }} type="button" class="btn btn-primary">
+                                  Register with facebook
+                                </a>
                             </div>
                         </div>
                     </form>
