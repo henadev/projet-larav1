@@ -107,5 +107,11 @@ Route::get('/', function(){
 Route::get('/redirect/{service}','SocialController@redirect');
 Route::get('/callback/{service}','SocialController@callback');
 
+Route::get('/fillable','CrudController@getOffers');
 
+
+Route::group(['prefix' => 'offers'],function(){
+       
+    Route::get('store','CrudController@Store');
+});
 

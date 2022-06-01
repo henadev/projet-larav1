@@ -22,7 +22,7 @@ class Notify extends Command
      *
      * @var string
      */
-    protected $description = 'Send email notify for all user every day';
+    protected $description = 'Send email notify for all user every minute';
 
     /**
      * Create a new command instance.
