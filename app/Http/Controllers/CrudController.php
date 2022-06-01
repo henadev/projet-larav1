@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Offert;
+use Illuminate\Support\Facades\Validator;
 
 class CrudController extends Controller
 {
@@ -38,6 +39,17 @@ class CrudController extends Controller
 
     public function Store(Request $request){
         // return $request;
+
+        //Validate data befor insert to database
+        $validator = Validator::make($request->all(),[
+            'name'   => 'required|max:100|unique:offers,name',
+            'price'  => 'required|numeric',
+            'details'=> 'required',
+        ]);
+
+        if($validator -> fails()){
+            return $validator -> errors();
+        }
 
         Offert::create([
             'name'    =>$request-> name , 
