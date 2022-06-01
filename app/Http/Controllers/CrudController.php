@@ -22,13 +22,29 @@ class CrudController extends Controller
         return Offert::get();
     }
 
-    public function Store(){
-        // return Offert::select('id','name')->get();
+    // public function Store(){
+    //     // return Offert::select('id','name')->get();
+
+    //     Offert::create([
+    //         'name' => 'offer3' , 
+    //         'price' => '400.00' , 
+    //         'details' => 'offer3',
+    //     ]);
+    // }
+
+    public function Create(){
+        return view('offers.create');
+    }
+
+    public function Store(Request $request){
+        // return $request;
 
         Offert::create([
-            'name' => 'offer3' , 
-            'price' => '400.00' , 
-            'details' => 'offer3',
-        ]);
+            'name'    =>$request-> name , 
+            'price'   =>$request-> price , 
+            'details' =>$request-> details,
+         ]);
+
+         return 'save successfly';
     }
 }

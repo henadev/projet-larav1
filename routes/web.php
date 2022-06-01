@@ -112,6 +112,9 @@ Route::get('/fillable','CrudController@getOffers');
 
 Route::group(['prefix' => 'offers'],function(){
        
-    Route::get('store','CrudController@Store');
+    //Route::get('store','CrudController@Store');
+
+    Route::get('create','CrudController@Create');
+    Route::post('store','CrudController@Store')->name('offers.store');
 });
 
