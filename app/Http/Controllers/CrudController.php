@@ -47,7 +47,7 @@ class CrudController extends Controller
         $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator -> fails()){
-            return $validator -> errors();
+            return redirect()-> back() ->withErrors($validator) -> withInputs($request->all());
         }
 
         Offert::create([
@@ -56,7 +56,7 @@ class CrudController extends Controller
             'details' =>$request-> details,
          ]);
 
-         return 'save successfly';
+         return redirect()-> back() ->with(['success' =>'Offer est bien ajouter, BIENVENUE!']);
     }
 
     protected function getMessages(){

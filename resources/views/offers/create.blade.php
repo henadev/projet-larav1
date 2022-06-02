@@ -48,7 +48,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 77px;
                 font-weight: bold;
             }
 
@@ -70,9 +70,18 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
+
+             @if(Session::has('success'))  
+                <div class="alert alert-success text-bold" role="alert">
+                    <h3>{{ Session::get('success') }}</h3>
+                </div>
+             @endif
+
                 <div class="title m-b-md text-primary">
                     Add Offer
                 </div>
+
+
                 {{-- <form method="POST" action="{{ url('offers\store') }}"> ou --}}
                     <form method="POST" action="{{ route('offers.store') }}">
                     @csrf  
@@ -83,6 +92,11 @@
 
                         <div class="col-md-6">
                             <input id="name" type="text"  name="name" >
+
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
                         </div>
                     </div>
 
@@ -91,6 +105,11 @@
 
                         <div class="col-md-6">
                             <input id="price" type="text"  name="price" >
+
+                            @error('price')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
                         </div>
                     </div>
 
@@ -99,6 +118,11 @@
 
                         <div class="col-md-6">
                             <input id="details" type="text"  name="details" >
+
+                            @error('details')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
                         </div>
                     </div>
 
