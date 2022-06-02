@@ -41,11 +41,10 @@ class CrudController extends Controller
         // return $request;
 
         //Validate data befor insert to database
-        $validator = Validator::make($request->all(),[
-            'name'   => 'required|max:100|unique:offers,name',
-            'price'  => 'required|numeric',
-            'details'=> 'required',
-        ]);
+        $rules= $this ->getRules();
+        $messages= $this ->getMessages();
+
+        $validator = Validator::make($request->all(),$rules,$messages);
 
         if($validator -> fails()){
             return $validator -> errors();
@@ -58,5 +57,26 @@ class CrudController extends Controller
          ]);
 
          return 'save successfly';
+    }
+
+    protected function getMessages(){
+
+        return $messages=[
+            'name.required' => 'Le nom est obligatoire',
+            'name.max' => 'max 100 caracteres',
+            'name.unique' => 'Le nom est trouvé, ressayer',
+            'price.required' => 'Le prix est obligatoire',
+            'price.numeric' => 'Le prix est un reel attention!',
+            'details.required' => 'Les details est obligatoire',
+        ];
+    }
+
+    protected function getRules(){
+
+        return $rules=[
+            'name'   => 'required|max:100|unique:offers,name',
+            'price'  => 'required|numeric',
+            'details'=> 'required',
+        ];
     }
 }
