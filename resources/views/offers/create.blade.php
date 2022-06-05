@@ -16,15 +16,19 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #545657;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
             }
+            ::placeholder{
+                color: #8e9ca3;
+                font-size: 12px;
+            }
 
             .full-height {
-                height: 100vh;
+                height: 80vh;
             }
 
             .flex-center {
@@ -69,14 +73,14 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light my-0">
                 <a class="navbar-brand" href="#">Starter</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                 <ul class="navbar-nav">  
+                  <div class="navbar-nav my-0">
+                 <ul class="navbar-nav my-0">  
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
                         <a class="nav-link active" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -91,8 +95,8 @@
                 </div>
               </nav>
         </header>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
+        <div class="flex-center position-ref full-height my-0">
+            <div class="content my-0">
 
              @if(Session::has('success'))  
                 <div class="alert alert-success text-bold" role="alert">
@@ -101,7 +105,7 @@
              @endif
 
                 <div class="title m-b-md text-primary">
-                    Add Offer
+                    {{ __('messages.Add Your Offer') }}
                 </div>
 
 
@@ -111,10 +115,10 @@
                     {{-- OU --}}
                   {{--<input type="_token" value={{ csrf_token() }}> --}}
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">Offer Name :</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text"  name="name" >
+                            <input id="name" type="text"  name="name" placeholder="{{ __('messages.Offer Name') }}" >
 
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -124,10 +128,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="price" class="col-md-4 col-form-label text-md-right">Offer Price :</label>
+                        <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Price') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="price" type="text"  name="price" >
+                            <input id="price" type="text"  name="price" placeholder="{{ __('messages.Offer Price') }}" >
 
                             @error('price')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -137,10 +141,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="details" class="col-md-4 col-form-label text-md-right">Offer Details :</label>
+                        <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Détails') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="details" type="text"  name="details" >
+                            <input id="details" type="text"  name="details" placeholder="{{ __('messages.Offer Détails') }} ">
 
                             @error('details')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -152,7 +156,7 @@
                     <div class="form-group row my-0">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-primary">
-                               Save Offer
+                               {{ __('messages.Save Offer') }}
                             </button>
                         </div>
                     </div>
