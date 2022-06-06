@@ -115,10 +115,22 @@
                     {{-- OU --}}
                   {{--<input type="_token" value={{ csrf_token() }}> --}}
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name') }} :</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name AR') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text"  name="name" placeholder="{{ __('messages.Offer Name') }}" >
+                            <input id="name" type="text"  name="name_ar" placeholder="{{ __('messages.Offer Name AR') }}" >
+
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name EN') }} :</label>
+
+                        <div class="col-md-6">
+                            <input id="name" type="text"  name="name_en" placeholder="{{ __('messages.Offer Name EN') }}" >
 
                             @error('name')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -141,12 +153,24 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Détails') }} :</label>
+                        <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Details AR') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="details" type="text"  name="details" placeholder="{{ __('messages.Offer Détails') }} ">
+                            <input id="details" type="text"  name="details_ar" placeholder="{{ __('messages.Offer Details AR') }} ">
 
-                            @error('details')
+                            @error('details_ar')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Details EN') }} :</label>
+
+                        <div class="col-md-6">
+                            <input id="details" type="text"  name="details_en" placeholder="{{ __('messages.Offer Details EN') }} ">
+
+                            @error('details_en')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
 

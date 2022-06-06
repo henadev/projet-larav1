@@ -9,8 +9,12 @@ return [
 "offer price numeric" => 'offer price numeric',
 "offer details required" => 'offer details required',
 "Add Your Offer" => "Add Your Offer",
+"Offer Name AR" => "Offer Name Arabic",
 "Offer Name" => "Offer Name",
+"Offer Name EN" => "Offer Name English",
 "Offer Price" => "Offer Price",
-"Offer Détails" => "Offer Détails",
+"Offer Details AR" => "Offer Détails Arabic",
+"Offer Details" => "Offer Détails",
+"Offer Details EN" => "Offer Détails English",
 "Save Offer" => "Save Offer",
 ];

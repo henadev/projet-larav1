@@ -9,8 +9,12 @@ return [
 "offer price numeric" => 'الرجاء ادخال ارقام',
 "offer details required" => 'التفاصيل اجبارية',
 "Add Your Offer" => 'ادخل عرض جديد',
-"Offer Name" => ' اسم العرض',
+"Offer Name AR" => ' اسم العرض بالعربي',
+"Offer Name" => ' اسم العرض ',
+"Offer Name EN" => ' اسم العرض بالانجليزي',
 "Offer Price" => ' ثمن العرض ',
-"Offer Détails" => ' تفاصيل العرض',
+"Offer Details AR" => ' تفاصيل العرض بالعربي',
+"Offer Details" => ' تفاصيل العرض ',
+"Offer Details EN" => ' تفاصيل العرض بالانجليزي',
 "Save Offer" => 'سجل العرض'
 ];
