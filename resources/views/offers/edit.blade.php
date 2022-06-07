@@ -105,12 +105,12 @@
              @endif
 
                 <div class="title m-b-md text-primary">
-                    {{ __('messages.Add Your Offer') }}
+                    {{ __('messages.Edit Your Offer') }}
                 </div>
 
 
-                {{-- <form method="POST" action="{{ url('offers\store') }}"> ou --}}
-                    <form method="POST" action="{{ route('offers.store') }}">
+                {{-- <form method="POST" action="{{ url('offers\store') }}"> ou --}} 
+                    <form method="POST" action="{{ url('offers/update/'.$offer -> id) }}">
                     @csrf  
                     {{-- OU --}}
                   {{--<input type="_token" value={{ csrf_token() }}> --}}
@@ -118,7 +118,7 @@
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name AR') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text"  name="name_ar" placeholder="{{ __('messages.Offer Name AR') }}" >
+                            <input id="name" type="text"  name="name_ar" value="{{ $offer -> name_ar }}" placeholder="{{ __('messages.Offer Name AR') }}" >
 
                             @error('name_ar')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -130,7 +130,7 @@
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Name EN') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text"  name="name_en" placeholder="{{ __('messages.Offer Name EN') }}" >
+                            <input id="name" type="text"  name="name_en" value="{{ $offer -> name_en }}" placeholder="{{ __('messages.Offer Name EN') }}" >
 
                             @error('name_en')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -143,7 +143,7 @@
                         <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Price') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="price" type="text"  name="price" placeholder="{{ __('messages.Offer Price') }}" >
+                            <input id="price" type="text"  name="price" value="{{ $offer -> price }}" placeholder="{{ __('messages.Offer Price') }}" >
 
                             @error('price')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -156,7 +156,7 @@
                         <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Details AR') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="details" type="text"  name="details_ar" placeholder="{{ __('messages.Offer Details AR') }} ">
+                            <input id="details" type="text"  name="details_ar" value="{{ $offer -> details_ar }}" placeholder="{{ __('messages.Offer Details AR') }} ">
 
                             @error('details_ar')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -168,7 +168,7 @@
                         <label for="details" class="col-md-4 col-form-label text-md-right">{{ __('messages.Offer Details EN') }} :</label>
 
                         <div class="col-md-6">
-                            <input id="details" type="text"  name="details_en" placeholder="{{ __('messages.Offer Details EN') }} ">
+                            <input id="details" type="text"  name="details_en" value="{{ $offer -> details_en }}" placeholder="{{ __('messages.Offer Details EN') }} ">
 
                             @error('details_en')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -180,7 +180,7 @@
                     <div class="form-group row my-0">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-primary">
-                               {{ __('messages.Save Offer') }}
+                               {{ __('messages.Edit Offer') }}
                             </button>
                         </div>
                     </div>

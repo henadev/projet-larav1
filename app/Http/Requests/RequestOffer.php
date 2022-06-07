@@ -35,12 +35,16 @@ class RequestOffer extends FormRequest
     public function messages(){
 
             return [
-                'name.required' => __('messages.offer name required'),
-                'name.max' => __('messages.offer name max'),
-                'name.unique' =>__('messages.offer name unique'),
+                'name_ar.required' => __('messages.offer name required'),
+                'name_en.required' => __('messages.offer name required'),
+                'name_ar.max' => __('messages.offer name max'),
+                'name_en.max' => __('messages.offer name max'),
+                'name_ar.unique' =>__('messages.offer name unique'),
+                'name_en.unique' =>__('messages.offer name unique'),
                 'price.required' => __('messages.offer price required'),
                 'price.numeric' =>  __('messages.offer price numeric'),
-                'details.required' => __('messages.offer details required'),
+                'details_ar.required' => __('messages.offer details required'),
+                'details_en.required' => __('messages.offer details required'),
             ];
         }
 }

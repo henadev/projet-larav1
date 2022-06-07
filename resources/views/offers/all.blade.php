@@ -99,9 +99,10 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>{{ __('messages.Offer Name') }}</th>
-                            <th>{{ __('messages.Offer Price') }}</th>
-                            <th>{{ __('messages.Offer Details') }}</th>
+                            <th> {{ __('messages.Offer Name') }}    </th>
+                            <th> {{ __('messages.Offer Price') }}   </th>
+                            <th> {{ __('messages.Offer Details') }} </th>
+                            <th>             Action                 </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -112,6 +113,7 @@
                                 <td>{{ $offer -> name }}</td>
                                 <td>{{ $offer -> price }}</td>
                                 <td>{{ $offer -> details }}</td>
+                                <td>       <a type="button" class="btn btn-primary" href="{{ url('offers/edit/'.$offer -> id) }}"> Edit</a>                </td>
                             </tr>
                             
                         @endforeach
