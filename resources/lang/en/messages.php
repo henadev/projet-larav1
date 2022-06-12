@@ -23,5 +23,6 @@ return [
 "Save Offer" => "Save Offer",
 "Edit Your Offer" => "Edit Your Offer",
 "Edit Offer" => "Edit Offer",
+"Image Offer" => "Image Offer"
 
 ];

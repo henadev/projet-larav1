@@ -110,7 +110,7 @@
 
 
                 {{-- <form method="POST" action="{{ url('offers\store') }}"> ou --}}
-                    <form method="POST" action="{{ route('offers.store') }}">
+                    <form method="POST" action="{{ route('offers.store') }}" enctype="multipart/form-data">
                     @csrf  
                     {{-- OU --}}
                   {{--<input type="_token" value={{ csrf_token() }}> --}}
@@ -171,6 +171,19 @@
                             <input id="details" type="text"  name="details_en" placeholder="{{ __('messages.Offer Details EN') }} ">
 
                             @error('details_en')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('messages.Image Offer') }} :</label>
+
+                        <div class="col-md-6">
+                            <input id="image" type="file"  name="image" >
+
+                            @error('file')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
 

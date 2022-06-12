@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Traits\OfferTrait;
 use Illuminate\Http\Request;
 use App\Models\Offert;
 use Illuminate\Support\Facades\Validator;
@@ -10,6 +10,8 @@ use LaravelLocalization;
 
 class CrudController extends Controller
 {
+
+    use OfferTrait;
     /**
      * Create a new controller instance.
      *
@@ -59,12 +61,16 @@ class CrudController extends Controller
         //     return redirect()-> back() ->withErrors($validator) -> withInputs($request->all());
         // }
 
+        $file_name= $this -> saveImage($request);
+       
+
         Offert::create([
             'name_ar'    =>$request-> name_ar , 
             'name_en'    =>$request-> name_en ,
             'price'   =>$request-> price , 
             'details_ar' =>$request-> details_ar,
             'details_en' =>$request-> details_en,
+            'image' => $file_name,
          ]);
 
          return redirect()-> back() ->with(['success' =>'Offer est bien ajouter, BIENVENUE!']);
@@ -135,4 +141,6 @@ class CrudController extends Controller
             // 'details'=> 'required',
     //     ];
     // }
+
+    
 }

@@ -23,4 +23,5 @@ return [
 "Offer Details EN" => ' تفاصيل العرض بالانجليزي',
 "Save Offer" => 'سجل العرض',
 "Edit Offer" => "تغيير العرض",
+"Image Offer" => "صورة العرض"
 ];
