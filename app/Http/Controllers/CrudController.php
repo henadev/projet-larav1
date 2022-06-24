@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Events\VideoViewer;
 use App\Traits\OfferTrait;
 use Illuminate\Http\Request;
 use App\Models\Offert;
+use App\Models\Video;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\RequestOffer;
 use LaravelLocalization;
@@ -61,7 +64,7 @@ class CrudController extends Controller
         //     return redirect()-> back() ->withErrors($validator) -> withInputs($request->all());
         // }
 
-        $file_name= $this -> saveImage($request);
+        $file_name= $this -> saveImage($request -> image, $folder='images\offers');
        
 
         Offert::create([
@@ -142,5 +145,9 @@ class CrudController extends Controller
     //     ];
     // }
 
-    
+    public function getVideo(){
+        $video = Video::first();
+        event(new VideoViewer($video));
+        return view('video')->with('video',$video);
+    }
 }
